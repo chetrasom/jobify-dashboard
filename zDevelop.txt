@@ -1,0 +1,174 @@
+Date: 08/15/2025
+Date: 08/16/2025
+Date: 08/17/2025
+Date: 08/18/2025
+Date: 08/19/2025
+Date: 08/20/2025
+
+> Template:
+    + https://shadcnblocks-admin.vercel.app/users
+    + Jobify Demo = https://nextjs-jobify-production.vercel.app/add-job
+> GitHub:
+    + https://github.com/john-smilga/react-course-v3/tree/main/19-starter-jobify
+> Youtube:
+    + Design Dashboard = https://www.youtube.com/watch?v=SjsQdfvxjL8&t=1046s&ab_channel=LamaDev
+
+> Advance ReactJS:
+    + https://www.youtube.com/@CodeFoundry8/videos
+
+✅ 🏆
+#______________________________________________________________#
+
+🏆1. Installation
+🏆2. ShadCN-UI setup
+
+🟨3. Root Layout and Home landing page ⚠️Not yet designed.
+
+🏆4. Route group Dashboard:
+    ✅+ group them in (dashboard)
+    ✅+ create add-job, jobs and stats pages
+    ✅+ setup a layout file (just pass children)
+
+
+🏆5. Dashboard Layout, Sidebar and Navbar:
+    ✅+ Create NavLinks data in /utils
+    ✅+ Create Sidebar, Navbar components.
+
+🏆6. Dashboard Design:
+    ✅+ Create /Providers:
+        - app/providers.tsx
+        - app/layout (root layout)
+
+    + Navbar:
+        ✅- User dropdown
+        ✅- Dark mode
+
+    + Sidebar:
+        ✅- Logo
+        ✅- Menu
+        ✅- Profile
+
+🏆7. Create Supabase project
+    ✅+ Project name: Jobify Dashboard
+    ✅+ Password: +9Qzdt%_9F_7+Xf
+    ✅+ Create .env and add .gitignore - Add DB_PASSWORD
+
+🏆8. Setup Prisma.
+🏆9. Connect Prisma to Supabase:
+    # npx prisma db push
+    # npx prisma studio
+    + Practices Prisma
+
+🏆10. Form Component and Types:
+    ✅+ CreateJobForm.tsx, in add-job page
+    ✅+ /utils/types.ts
+
+🏆11. Custom Form Components ( Text, Select ):
+    ✅+ CustomFormField
+    ✅+ CustomFormSelect
+
+🏆12. Clerk setup:
+    !Note: Important config file is middleware.ts -
+
+    + Default setup with Clerk.
+    + Clerk with ShadCN
+    + Test account:
+        - Email: admin@gmail.com
+        - Password: admin123@Gg
+
+🏆13. Prisma setup:
+    ✅+ Setup new prisma instance
+    ✅+ Setup connection file
+    ✅+ Create Job model
+    ✅+ Create job action - /actions.ts
+
+🏆14. Tanstack Query setup with Next.js
+    ✅+ Provider
+    ✅+ HydrationBoundary - AddJobPage
+
+🏆15. CreateJobForm with, Tanstack query, AddJobPage
+
+🏆16. Get All Jobs Action and Page Setup
+    ✅+16-1. Create /action/GetAllJobsAction.ts - basic, search, filter 
+
+    ✅+16-2. Jobs page:
+        ✅+ Setup jobs/loading.tsx
+
+        ✅+ Create client components:
+            - SearchForm
+            - JobsList
+            - JobCard
+            - JobInfo
+            - DeleteJobBtn
+
+        ✅+ Tanstack Query: Prefetch / Hydration
+
+🏆17. SearchForm - Jobs page.
+
+🏆18. Jobs List and Job Card - Jobs page.
+🏆19. Job Info and Delete Job(action & components) - Jobs page.
+    ✅+ DeleteJobAction
+    ✅+ DeleteJobButton component
+
+🏆20. Single Job Page and Edit Job:
+    ✅+ GetSingleJobAction, UpdateJobAction
+    ✅+ Create SingleJob Page - Dynamic Route:
+        - jobs/[id]/page.tsx
+
+    ✅+ EditJobForm component
+
+=============> Completed CRUD <=============
+
+🏆21. Seed Database:
+    ✅+ /prisma:
+        - mock-data.json
+        - seed.js
+        - userId come from /action/authenticateAndRedirect.ts
+
+    ✅+ Run prisma command:
+        !Note: Don't forget to check Prisma version, Debug from import file.
+        #1. npx prisma generate
+        #2. node prisma/seed.js
+
+🏆22. Stats and Charts Actions
+    ✅+ GetStatsAction.ts & Test on Stats page
+    ✅+ GetChartsAction & Test on Stats page
+
+🏆23. Render - Stats page
+    ✅+ Create loading.tsx
+    ✅+ Create StatsContainer component:
+        - Stats Cards
+        - StatsLoadingCard
+
+    ✅+ Setup loading:
+        - stats/loading.tsx
+        - jobs/loading.tsx
+
+    ✅+ ChartsContainer components
+
+🏆24. Pagination:
+    ✅+ Refactor getAllJobsAction - add Pagination
+    ✅+ Create ButtonContainer
+    ✅+ Refactor JobsList:
+        - Count Jobs
+        - ButtonContainer
+    ✅+ ComplexButtonContainer.tsx with multiple logic
+
+25. CHECK list testing before Deploy:
+
+1️⃣ Run Locally in Production Mode:
+    # npm run build
+    # npm run start
+
+    ✅+ All pages load correctly
+    + Update package json:
+        -
+        
+    + Dynamic routes work
+    - API routes respond as expected
+    - Auth & protected routes behave properly
+
+    https://medium.com/@speaktech.english/how-do-i-learn-english-for-software-engineering-in-2024-b13aa66148b5
+    https://www.youtube.com/@codeek0/videos
+    https://www.youtube.com/@NIMToDevStack/streams
+    https://github.com/john-smilga/react-course-v3/tree/main/19-starter-jobify#buttoncontainer
