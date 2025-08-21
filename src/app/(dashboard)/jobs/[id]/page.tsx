@@ -24,7 +24,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return {
         title: `${job.position} | My Job Site`,
         description: job.company,
+        openGraph: {
+            title: job.position,
+            description: `Work at ${job.company}`,
+            type: "article",
+        },
+        twitter: {
+            card: "summary",
+            title: job.position,
+            description: job.company,
+        },
     };
+
+    // return {
+    //     title: `${job.position} | My Job Site`,
+    //     description: job.company,
+    // };
 }
 
 const JobDetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {

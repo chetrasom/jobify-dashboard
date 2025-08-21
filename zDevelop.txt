@@ -156,7 +156,7 @@ Date: 08/22/2025
         - ButtonContainer
     ✅+ ComplexButtonContainer.tsx with multiple logic
 
-25. CHECK list testing before Deploy:
+🏆25. CHECK list testing before Deploy:
 
 1️⃣ Run Locally in Production Mode:
     # npm run build
@@ -193,6 +193,22 @@ Date: 08/22/2025
     ✅+ Make sure the layout, sidebar, modals, and tables look correct
 
 
+🏆26. SEO:
+    ✅1. Global SEO Metadata:
+        + In app/layout.tsx, add metadata:
+
+    ✅2. Add Dynamic SEO:
+        + app/jobs/[id]/page.tsx
+
+
+27. FavIcon
+    ✅+ /public folder
+    ✅+ layout.ts
+
+
+
+
+#________________________________________________________________________________________________#
 !! Refactor More UI
 https://redux-toolkit-jobster.netlify.app/add-job
 https://www.shadcnui-blocks.com/components/pagination

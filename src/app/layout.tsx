@@ -15,8 +15,54 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jobify Dashboard",
-  description: "Job application tracking system for job hunters",
+  title: {
+    default: "Jobify Dashboard",
+    template: "%s | Jobify",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  // icons: {
+  //   icon: [
+  //     { 
+  //       url: '/favicon.ico',
+  //       type: 'image/x-icon',
+  //     },
+  //     { 
+  //       url: '/favicon-16x16.png',
+  //       type: 'image/png',
+  //     },
+  //     { 
+  //       url: '/apple-touch-icon.png',
+  //       type: 'image/png',
+  //     },
+  //   ],
+  // },
+  description:"Jobify Dashboard lets you add, track, and manage jobs efficiently.",
+  keywords: ["jobs", "career", "dashboard", "Jobify", "Next.js"],
+  openGraph: {
+    title: "Jobify Dashboard",
+    description: "Manage your job search with ease.",
+    url: "https://yourdomain.com",
+    siteName: "Jobify",
+    images: [
+      {
+        url: "https://yourdomain.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Jobify Dashboard",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jobify Dashboard",
+    description: "Track and manage your jobs efficiently.",
+    images: ["https://yourdomain.com/og-image.png"],
+  },
 };
 
 export default function RootLayout({
