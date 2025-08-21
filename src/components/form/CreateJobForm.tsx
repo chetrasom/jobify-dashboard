@@ -15,6 +15,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createJobAction } from "@/utils/actions";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { Loader2Icon, Plus } from "lucide-react";
 
 const CreateJobForm = () => {
     // 1. Define form.
@@ -57,7 +58,7 @@ const CreateJobForm = () => {
     }
 
     return (
-        <div className="max-w-md">
+        <div className="max-w-lg md:mx-auto">
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                     <CustomFormField name="position" control={form.control} placeholder="Enter position" />
@@ -83,13 +84,25 @@ const CreateJobForm = () => {
                         />
                     </div>
 
-                    <Button 
-                        type="submit" 
-                        className='self-end capitalize h-11'
-                        disabled={isPending}
-                    >
-                        {isPending ? 'loading...' : 'create job'}
-                    </Button>
+                    <div className="mt-8 flex justify-center">
+                        <Button 
+                            type="submit" 
+                            className='self-end capitalize h-11 w-full dark:text-white cursor-pointer'
+                            disabled={isPending}
+                        >
+                            {isPending ? (
+                                <div className="flex items-center gap-x-1 ">
+                                    <Loader2Icon className="animate-spin" />
+                                    Creating...
+                                </div>
+                            ) : (
+                                <div className="flex items-center gap-x-1">
+                                    <Plus className="h-4 w-4" />
+                                    Create job
+                                </div>
+                            )}
+                        </Button>
+                    </div>
                 </form>
             </Form>
         </div>

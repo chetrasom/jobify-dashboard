@@ -68,8 +68,8 @@ export async function getAllJobsAction({
             whereClause = {
                 ...whereClause,
                 OR: [
-                    { position: { contains: search } },
-                    { company: { contains: search } },
+                    { position: { contains: search, mode: "insensitive" } },
+                    { company: { contains: search, mode: "insensitive" } },
                 ],
             };
         };
@@ -213,7 +213,7 @@ export async function getStatsAction(): Promise<{
                 interview: 21 
             }
         */
-        const statsObject = stats.reduce((acc, curr) => {
+        const statsObject = stats.reduce((acc: { [x: string]: any; }, curr: { status: string | number; _count: { status: any; }; }) => {
             acc[curr.status] = curr._count.status;
             return acc;
         }, {} as Record<string, number>);
@@ -253,7 +253,7 @@ export async function getChartsDataAction(): Promise<
             },
         });
 
-        let applicationsPerMonth = jobs.reduce((acc, job) => {
+        let applicationsPerMonth = jobs.reduce((acc: { date: string; count: number; }[], job: { createdAt: string | number | dayjs.Dayjs | Date | null | undefined; }) => {
             const date = dayjs(job.createdAt).format('MMM YY');
 
             const existingEntry = acc.find((entry) => entry.date === date);

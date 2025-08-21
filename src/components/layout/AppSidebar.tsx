@@ -19,8 +19,6 @@ import {
     IconUsers,
 } from "@tabler/icons-react"
 
-
-
 import {
     Sidebar,
     SidebarContent,
@@ -71,7 +69,7 @@ const AppSidebar = () => {
                         >
                             <Link href="#">
                                 <IconInnerShadowTop className="!size-5" />
-                                <span className="text-base font-semibold">Acme Inc.</span>
+                                <span className="text-base font-semibold">Jobify</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -83,7 +81,7 @@ const AppSidebar = () => {
             </SidebarContent>
 
             <SidebarFooter>
-                <NavUser user={data.user} />
+                <NavUser navUser={data.user} />
             </SidebarFooter>
         </Sidebar>
     )

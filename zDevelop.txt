@@ -4,6 +4,8 @@ Date: 08/17/2025
 Date: 08/18/2025
 Date: 08/19/2025
 Date: 08/20/2025
+Date: 08/21/2025
+Date: 08/22/2025
 
 > Template:
     + https://shadcnblocks-admin.vercel.app/users
@@ -161,14 +163,49 @@ Date: 08/20/2025
     # npm run start
 
     ✅+ All pages load correctly
-    + Update package json:
-        -
+    ✅+ Configure packages.json = "build": "npx prisma generate && next build"
+        ✅- Debug prisma:
+            1. Wrong import
+            2. Wrong output schema.prisma.
         
-    + Dynamic routes work
-    - API routes respond as expected
-    - Auth & protected routes behave properly
+    ✅+ Dynamic routes:
+        - /jobs/[id] > generateStaticParams()
+        - Fixed single key ['job', jobId]
+        - generateMetadata
 
-    https://medium.com/@speaktech.english/how-do-i-learn-english-for-software-engineering-in-2024-b13aa66148b5
-    https://www.youtube.com/@codeek0/videos
-    https://www.youtube.com/@NIMToDevStack/streams
-    https://github.com/john-smilga/react-course-v3/tree/main/19-starter-jobify#buttoncontainer
+    ✅+ API routes respond as expected
+    ✅+ Auth & protected routes behave properly
+
+2️⃣ Test All Features
+    ✅+ CRUD actions (add, edit, delete)
+    ✅+ Pagination & filters
+    ✅+ Login / logout / profile updates
+    ✅+ Error pages (404, access denied)
+
+3️⃣ Environment Variables
+    ✅+ Make sure .env values are set correctly for prod.
+    ✅+ Try running with NEXT_PUBLIC_ vars for frontend & secret vars for backend.
+    ✅+ Test database connection locally in prod mode.
+
+4️⃣ Responsive, UX & UI update & Browser Testing
+    ✅+ UI update
+    ✅+ Check your dashboard in multiple browsers and screen sizes
+    ✅+ Make sure the layout, sidebar, modals, and tables look correct
+
+
+!! Refactor More UI
+https://redux-toolkit-jobster.netlify.app/add-job
+https://www.shadcnui-blocks.com/components/pagination
+
+
+https://www.youtube.com/@NIMToDevStack/streams
+https://youtu.be/CWJo-dXezvI
+
+
+===>
+Portfolioes = [ https://abdulr-portfolio.netlify.app/?fbclid=IwY2xjawMSf6dleHRuA2FlbQIxMABicmlkETF5M2dwWEFjMVNNTmJQc25hAR79Qxqys98EU5wPaUgfUfZVELL6L1lP70XloP4O3VctbR6iVmUff87X039Z_Q_aem_Iq6UV79kCQBZmaDR2sAJWw ]
+
+https://medium.com/@speaktech.english/how-do-i-learn-english-for-software-engineering-in-2024-b13aa66148b5
+https://www.youtube.com/@codeek0/videos
+https://www.youtube.com/@NIMToDevStack/streams
+https://github.com/john-smilga/react-course-v3/tree/main/19-starter-jobify#buttoncontainer

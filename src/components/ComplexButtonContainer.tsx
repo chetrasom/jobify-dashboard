@@ -14,6 +14,7 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination";
 import { cn } from "@/lib/utils";
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 
 type ButtonContainerProps = {
     currentPage: number;
@@ -50,7 +51,7 @@ const ComplexButtonContainer = ({ currentPage, totalPages }: ButtonContainerProp
                 size='icon'
                 variant={activeClass ? 'default' : 'outline'}
                 onClick={() => handlePageChange(page)}
-                className='cursor-pointer'
+                className='cursor-pointer size-10 dark:text-white'
             >
                 {page}
             </Button>
@@ -69,7 +70,7 @@ const ComplexButtonContainer = ({ currentPage, totalPages }: ButtonContainerProp
         // dots
         if (currentPage > 3) {
             pageButtons.push(
-                <Button size='icon' variant='outline' key='dots-1'>
+                <Button size='icon' variant='outline' key='dots-1' className='size-10'>
                 ...
                 </Button>
             );
@@ -107,7 +108,7 @@ const ComplexButtonContainer = ({ currentPage, totalPages }: ButtonContainerProp
 
         if (currentPage < totalPages - 2) {
             pageButtons.push(
-                <Button size='icon' variant='outline' key='dots-2'>
+                <Button size='icon' variant='outline' key='dots-2' className='size-10'>
                 ...
                 </Button>
             );
@@ -126,10 +127,10 @@ const ComplexButtonContainer = ({ currentPage, totalPages }: ButtonContainerProp
     return (
         <div>
             <Pagination>
-                <PaginationContent>
+                <PaginationContent className='flex flex-wrap gap-x-1.5 gap-y-2.5 md:gap-x-2'>
                     <PaginationItem>
                         <Button
-                            className='flex items-center gap-x-2 capitalize cursor-pointer'
+                            className='flex items-center gap-x-2 capitalize cursor-pointer h-10'
                             variant='outline'
                             onClick={() => {
                                 let prevPage = currentPage - 1;
@@ -138,15 +139,15 @@ const ComplexButtonContainer = ({ currentPage, totalPages }: ButtonContainerProp
                             }}
                         >
                             <ChevronLeft />
-                            previous
+                            <span className='hidden md:inline-flex'>previous</span>
                         </Button>
                     </PaginationItem>
-
+                    
                     {renderPageButtons()}
 
                     <PaginationItem>
                         <Button
-                            className='flex items-center gap-x-2 capitalize cursor-pointer'
+                            className='flex items-center gap-x-2 capitalize cursor-pointer h-10'
                             onClick={() => {
                                 let nextPage = currentPage + 1;
                                 if (nextPage > totalPages) nextPage = 1;
@@ -154,7 +155,7 @@ const ComplexButtonContainer = ({ currentPage, totalPages }: ButtonContainerProp
                             }}
                             variant='outline'
                         >
-                            next
+                            <span className='hidden md:inline-flex'>next</span>
                             <ChevronRight />
                         </Button>
                     </PaginationItem>

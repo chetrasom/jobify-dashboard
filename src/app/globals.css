@@ -152,6 +152,6 @@
 
 @layer utilities {
   .btn-custom {
-    @apply h-11 cursor-pointer text-white w-full lg:max-w-max
+    @apply h-11 cursor-pointer text-white w-full
   }
 }

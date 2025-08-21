@@ -31,7 +31,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Toaster />
+                    <Toaster position="top-center" />
                     <SidebarProvider>
                         {children}
                     </SidebarProvider>

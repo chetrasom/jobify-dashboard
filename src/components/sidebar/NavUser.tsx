@@ -29,16 +29,23 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar"
 
+import { SignOutButton, UserProfile, useUser } from "@clerk/nextjs";
+
 type NavUserProps = {
-    user: {
+    navUser: {
         name: string
         email: string
         avatar: string
     }
 }
 
-const NavUser = ({ user }: NavUserProps) => {
-    const { isMobile } = useSidebar()
+const NavUser = ({ navUser }: NavUserProps) => {
+    const { isMobile } = useSidebar();
+    const { user } = useUser();
+
+    if (!user) return null; 
+
+    console.log(user)
     
     return (
         <SidebarMenu>
@@ -49,13 +56,17 @@ const NavUser = ({ user }: NavUserProps) => {
                             size="lg"
                             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                         >
-                            <Avatar className="h-8 w-8 rounded-lg">
-                                <AvatarImage src={user.avatar} alt={user.name} className="object-cover" />
-                                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                            <Avatar className="h-8 w-8 rounded-full">
+                                {user?.imageUrl ? (
+                                    <AvatarImage src={user.imageUrl} className="object-cover" />
+                                ) : (
+                                    <AvatarFallback className="rounded-lg">{user?.firstName?.[0] || "U"}</AvatarFallback>
+                                )}
                             </Avatar>
+
                             <div className="grid flex-1 text-left text-sm leading-tight">
-                                <span className="truncate font-medium">{user.name}</span>
-                                <span className="truncate text-xs">{user.email}</span>
+                                <span className="truncate font-medium">{user.fullName}</span>
+                                <span className="truncate text-xs">{user.emailAddresses[0].emailAddress}</span>
                             </div>
                             <ChevronsUpDown className="ml-auto size-4" />
                         </SidebarMenuButton>
@@ -68,42 +79,49 @@ const NavUser = ({ user }: NavUserProps) => {
                     >
                         <DropdownMenuLabel className="p-0 font-normal">
                             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                                <Avatar className="h-8 w-8 rounded-lg">
-                                    <AvatarImage src={user.avatar} alt={user.name} className="object-cover" />
-                                    <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                                <Avatar className="h-8 w-8 rounded-full">
+                                    {user?.imageUrl ? (
+                                        <AvatarImage src={user.imageUrl} className="object-cover" />
+                                    ) : (
+                                        <AvatarFallback className="rounded-lg">{user?.firstName?.[0] || "U"}</AvatarFallback>
+                                    )}
                                 </Avatar>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
-                                <span className="truncate font-medium">{user.name}</span>
-                                <span className="truncate text-xs">{user.email}</span>
+                                    <span className="truncate font-medium">{user.fullName}</span>
+                                    <span className="truncate text-xs">{user.emailAddresses[0].emailAddress}</span>
                                 </div>
                             </div>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                             <DropdownMenuGroup>
-                                <DropdownMenuItem>
+                                <DropdownMenuItem disabled>
                                     <Sparkles />
-                                    Upgrade to Pro
+                                    Upgrade to Pro <small className="text-amber-500"><i>!Soon</i></small>
                                 </DropdownMenuItem>
                             </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem disabled>
                                 <BadgeCheck />
-                                Account
+                                Account <small className="text-amber-500"><i>!Soon</i></small>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem disabled>
                                 <CreditCard />
-                                Billing
+                                Billing <small className="text-amber-500"><i>!Soon</i></small>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem disabled>
                                 <Bell />
-                                Notifications
+                                Notifications <small className="text-amber-500"><i>!Soon</i></small>
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            <LogOut />
-                            Log out
+                        <DropdownMenuItem variant="destructive">
+                            <SignOutButton>
+                                <div className="flex items-center text-destructive font-semibold cursor-pointer">
+                                    <LogOut className="h-[1.2rem] w-[1.2rem] mr-2" />
+                                    Logout
+                                </div>
+                            </SignOutButton>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

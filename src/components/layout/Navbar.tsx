@@ -1,8 +1,6 @@
 import React from 'react'
 import { SidebarTrigger } from '../ui/sidebar';
 import { UserButton } from '@clerk/nextjs';
-
-import UserDropdown from '../navbar/UserDropdown';
 import DarkModeToggle from '../navbar/DarkModeToggle';
 const Navbar = () => {
     return (
@@ -14,7 +12,6 @@ const Navbar = () => {
             <div className='flex items-center gap-4'>
                 <DarkModeToggle />
                 <UserButton />
-                <UserDropdown />
             </div>
         </nav>
     )

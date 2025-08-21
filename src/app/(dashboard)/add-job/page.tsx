@@ -12,8 +12,8 @@ const AddJobPage = () => {
 
     return (
         <section>
-            <div className="flex items-center justify-between">
-                <div className="mb-8">
+            <div className="flex items-center justify-center">
+                <div className="mb-8 max-w-lg">
                     <h1 className="text-3xl font-bold text-foreground mb-2">Create Job Posting</h1>
                     <p className="text-muted-foreground">
                         Fill out the form below to create a new job posting for your organization.

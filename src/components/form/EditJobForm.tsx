@@ -29,8 +29,6 @@ const EditJobForm = ({ jobId }: EditJobFormProps) => {
         queryFn: () => getSingleJobAction(jobId),
     });
 
-    console.log(data)
-
     // #2- update job
     const { mutate, isPending } = useMutation({
         mutationFn: (values: CreateAndEditJobType) => updateJobAction(jobId, values),
