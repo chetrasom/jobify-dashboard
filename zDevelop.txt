@@ -207,6 +207,24 @@ Date: 08/22/2025
 
 
 
+===> Testing Deploy:
+icons: {
+   icon: [
+     { 
+       url: '/favicon.ico',
+       type: 'image/x-icon',
+     },
+     { 
+       url: '/favicon-16x16.png',
+       type: 'image/png',
+     },
+     { 
+       url: '/apple-touch-icon.png',
+       type: 'image/png',
+     },
+   ],
+ },
+
 
 #________________________________________________________________________________________________#
 !! Refactor More UI

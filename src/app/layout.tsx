@@ -24,22 +24,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  // icons: {
-  //   icon: [
-  //     { 
-  //       url: '/favicon.ico',
-  //       type: 'image/x-icon',
-  //     },
-  //     { 
-  //       url: '/favicon-16x16.png',
-  //       type: 'image/png',
-  //     },
-  //     { 
-  //       url: '/apple-touch-icon.png',
-  //       type: 'image/png',
-  //     },
-  //   ],
-  // },
   description:"Jobify Dashboard lets you add, track, and manage jobs efficiently.",
   keywords: ["jobs", "career", "dashboard", "Jobify", "Next.js"],
   openGraph: {

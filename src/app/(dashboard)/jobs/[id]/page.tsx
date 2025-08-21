@@ -35,11 +35,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
             description: job.company,
         },
     };
-
-    // return {
-    //     title: `${job.position} | My Job Site`,
-    //     description: job.company,
-    // };
 }
 
 const JobDetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {
