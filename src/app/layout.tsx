@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jobify Dashboard",
     description: "Manage your job search with ease.",
-    url: "https://yourdomain.com",
+    url: "https://jobify-dashboard.vercel.app/",
     siteName: "Jobify",
     images: [
       {
