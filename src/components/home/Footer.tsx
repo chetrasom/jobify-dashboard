@@ -82,9 +82,10 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-                    <p className="text-primary-foreground/60 font-[var(--font-source-sans)]">
-                    © 2025 Jobify. All rights reserved.
+                    <p className="text-primary-foreground/60">
+                    © 2025 Jobify Dashboard. Build and Learning Purpose.
                     </p>
+                    <small className="text-primary">Develop by SOM Chetra</small>
                 </div>
             </div>
         </footer>
